@@ -13,7 +13,7 @@ pipeline{
                }      
                stage ('3. Build the docker image') {
                         steps {
-                     sh 'sudo docker build –t $image /home/ec2-user'
+                     sh 'sudo docker build –t $image .'
                         }
                }      
                stage ('4. Run the container') {
