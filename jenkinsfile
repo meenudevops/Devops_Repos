@@ -1,24 +1,24 @@
 pipeline{
         agent any 
         stages {
-               stage (“1. Install docker”) {
+               stage ('1. Install docker') {
                         steps {
-                            sh “sudo yum install docker -y”
+                            sh 'sudo yum install docker -y'
                         }
                }      
-               stage (“2. Start the docker service”) {
+               stage ('2. Start the docker service') {
                         steps {
-                            sh “sudo service docker start”
+                            sh 'sudo service docker start'
                         }
                }      
-               stage (“3. Build the docker image”) {
+               stage ('3. Build the docker image') {
                         steps {
-                     sh “sudo docker build –t $image /home/ec2-user”
+                     sh 'sudo docker build –t $image /home/ec2-user'
                         }
                }      
-               stage (“4. Run the container”) {
+               stage ('4. Run the container') {
                         steps {
-                          sh “sudo docker run –dit --name $container $image”                        
+                          sh 'sudo docker run –dit --name $container $image'                        
                        }     
                } 
                }
