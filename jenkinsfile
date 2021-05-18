@@ -18,7 +18,8 @@ pipeline{
                }      
                stage ('4. Run the container') {
                         steps {
-                          sh 'sudo docker run –dit --name $container $image'                        
+                            
+                          sh 'sudo docker run -dit --name $container $image'
                        }     
                } 
                }
